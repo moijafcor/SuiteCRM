@@ -786,6 +786,8 @@ function handleSugarConfig() {
     $sugar_config['disable_convert_lead']           = false;
     $sugar_config['log_dir']                        = $setup_site_log_dir;
     $sugar_config['log_file']                       = $setup_site_log_file;
+    $sugar_config['enable_line_editing_detail']     = true;
+    $sugar_config['enable_line_editing_list']       = true;
 
     // Setup FTS
     if (!empty($_SESSION['setup_fts_type'])) {
@@ -1510,7 +1512,7 @@ function pullSilentInstallVarsIntoSession() {
         'setup_db_sugarsales_password_retype'   => $config_subset['setup_db_sugarsales_password'],
     );
 
-    $needles = array('setup_db_create_database','setup_db_create_sugarsales_user','setup_license_key_users',
+    $needles = array('demoData','setup_db_create_database','setup_db_create_sugarsales_user','setup_license_key_users',
                      'setup_license_key_expire_date','setup_license_key', 'setup_num_lic_oc',
                      'default_currency_iso4217', 'default_currency_name', 'default_currency_significant_digits',
                      'default_currency_symbol',  'default_date_format', 'default_time_format', 'default_decimal_seperator',
@@ -2029,7 +2031,7 @@ function create_current_date_time()
 function create_time($hr=null,$min=null,$sec=null)
 {
     global $timedate;
-    $date = TimeDate::fromTimestamp(0);
+    $date = TimeDate::getInstance()->fromTimestamp(0);
     if ($hr==null) $hr=mt_rand(6,19);
     if ($min==null) $min=(mt_rand(0,3)*15);
     if ($sec==null) $sec=0;

@@ -428,7 +428,7 @@ class SugarApplication
 
         if(!is_null($theme) && !headers_sent())
         {
-            setcookie('sugar_user_theme', $theme, time() + 31536000); // expires in a year
+            setcookie('sugar_user_theme', $theme, time() + 31536000, null, null, false, true); // expires in a year
         }
 
         SugarThemeRegistry::set($theme);
@@ -631,7 +631,7 @@ class SugarApplication
 	 * @access	public
 	 * @param	string	$url	The URL to redirect to
 	 */
- 	function redirect(
+ 	static function redirect(
  	    $url
  	    )
 	{
@@ -700,7 +700,7 @@ class SugarApplication
 	    $path = '/',
 	    $domain = null,
 	    $secure = false,
-	    $httponly = false
+	    $httponly = true
 	    )
 	{
 	    if ( is_null($domain) )

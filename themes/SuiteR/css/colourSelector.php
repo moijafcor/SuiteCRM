@@ -2,7 +2,7 @@
 
 // config|_override.php
 if(is_file('../../../config.php')) {
-    require_once('../../../config.php'); // provides $sugar_config
+    require_once('../../../config.php');
 }
 
 // load up the config_override.php file.  This is used to provide default user settings
@@ -33,9 +33,11 @@ color: #<?php echo $sugar_config['theme_settings']['SuiteR']['page_link']; ?>;
 /* Dashlet CSS */
 
 .dashletPanel .h3Row{
-
 background: #<?php echo $sugar_config['theme_settings']['SuiteR']['dashlet']; ?>;
+}
 
+.dashletPanel .h3Row .dashletToolSet .icon{
+fill: #<?php echo $sugar_config['theme_settings']['SuiteR']['page_link']; ?>;	
 }
 
 /* Top navigation bar CSS */
@@ -63,6 +65,16 @@ background:#<?php echo $sugar_config['theme_settings']['SuiteR']['navbar_hover']
 color:#<?php echo $sugar_config['theme_settings']['SuiteR']['navbar_link_hover']; ?> !important;
 }
 
+#desktop_notifications .btn {
+background: #<?php echo $sugar_config['theme_settings']['SuiteR']['navbar']; ?>;	
+}
+
+#searchform .btn
+{
+background:#<?php echo $sugar_config['theme_settings']['SuiteR']['navbar'];?>;
+color: #<?php echo $sugar_config['theme_settings']['SuiteR']['icon']; ?>;
+}
+
 /* Drop down menu CSS */
 
 .dropdown-menu {
@@ -77,6 +89,21 @@ color:#<?php echo $sugar_config['theme_settings']['SuiteR']['dropdown_menu_link'
 color:#<?php echo $sugar_config['theme_settings']['SuiteR']['dropdown_menu_link_hover']; ?> !important;
 }
 
+/* Action Menu CSS */
+
+ul.clickMenu li ul.subnav, ul.clickMenu ul.subnav-sub, ul.SugarActionMenuIESub, ul.clickMenu li ul.subnav li a, ul.clickMenu li ul.subnav li input, ul.subnav-sub li a, ul.SugarActionMenuIESub li a, ul.clickMenu li ul.subnav li a, ul.clickMenu li ul.subnav li input, ul.subnav-sub li a, ul.SugarActionMenuIESub li a, ul.clickMenu li ul.subnav, ul.clickMenu ul.subnav-sub, ul.SugarActionMenuIESub, ul.clickMenu li ul.subnav li a, ul.clickMenu li ul.subnav li input, ul.subnav-sub li a, ul.SugarActionMenuIESub li a{
+
+background:#<?php echo $sugar_config['theme_settings']['SuiteR']['action_menu_background']; ?> !important;
+
+}
+
+ul.clickMenu li ul.subnav li a:hover,ul.clickMenu li ul.subnav li input:hover, ul.clickMenu.subpanel.records li ul.subnav li a:hover, ul.clickMenu ul.subnav-sub li a:hover, ul.clickMenu ul.subnav-sub li a:hover{
+
+background:#<?php echo $sugar_config['theme_settings']['SuiteR']['action_menu_background_hover']; ?> !important;
+
+}
+
+/* Icon CSS */
 
 .icon{
     fill: #<?php echo $sugar_config['theme_settings']['SuiteR']['icon']; ?> !important;
@@ -93,8 +120,27 @@ color:#<?php echo $sugar_config['theme_settings']['SuiteR']['button_link']; ?> !
 .btn:hover, .btn-success:hover, .btn-primary:hover, .button:hover, input[type=submit]:hover, input[type=button]:hover, a#create_link.utilsLink:hover, .btn-group a:hover, #globalLinksModule ul.clickMenu.SugarActionMenu li a:hover,
 #globalLinksModule ul.clickMenu li:hover span,
 ul.SugarActionMenuIESub li a:hover, ul.clickMenu.SugarActionMenu li a:hover, ul.clickMenu.SugarActionMenu li span.subhover:hover,
-ul#globalLinksSubnav li a:hover, ul#quickCreateULSubnav li a:hover,
-ul.clickMenu li ul.subnav li a:hover,ul.clickMenu li ul.subnav li input:hover, ul.clickMenu.subpanel.records li ul.subnav li a:hover, ul.clickMenu ul.subnav-sub li a:hover {
+ul#globalLinksSubnav li a:hover, ul#quickCreateULSubnav li a:hover {
 background:#<?php echo $sugar_config['theme_settings']['SuiteR']['button_hover']; ?> !important;
 color:#<?php echo $sugar_config['theme_settings']['SuiteR']['button_link_hover']; ?> !important;
+}
+
+/* popup colors */
+
+.yui-module .hd, .yui-panel .hd {
+    background-color: #<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_from']; ?>;
+    background: #<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_from']; ?> none repeat scroll 0 0;
+}
+
+/* suggestion box and popup */
+
+
+#suggestion_box table {
+    color: #<?php echo $sugar_config['theme_settings']['SuiteR']['page_link']; ?>;
+}
+
+.qtip-tipped .qtip-titlebar {
+    background-color: #<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_from']; ?>;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_from']; ?>),to(#<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_to']; ?>));
+    background-image: -webkit-linear-gradient(top,#<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_from']; ?>,#<?php echo $sugar_config['theme_settings']['SuiteR']['suggestion_popup_to']; ?>);
 }
